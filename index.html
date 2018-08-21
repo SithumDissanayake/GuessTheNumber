@@ -15,23 +15,22 @@
 
 	<body>
 		<div class="content">
+
 			<h1>Guess the Number</h1>
 
 			<div class="dropdown">
-				<button onclick="dropdown()" class="dropbtn">Select Difficulty: <br> (Default: Beginner)</button>
+				<button id="b1" onclick="dropdown()" class="dropbtn"><strong>Select Difficulty</strong><br/>Default Difficulty:<br/> Beginner 1 - 10</button>
 				<div id="dropdownList" class="dropdown-content">
-					<button class="dropdownbtn" onclick="beginner('10')">Beginner 1 - 10</button>
-					<button class="dropdownbtn" onclick="intermediate('50')">Intermediate 1 - 50</button>
-					<button class="dropdownbtn" onclick="hard('100')">Hard 1 - 100</button>
+					<button class="dropdownbtn" onclick="beginner(10)">Beginner 1 - 10</button>
+					<button class="dropdownbtn" onclick="intermediate(50)">Intermediate 1 - 50</button>
+					<button class="dropdownbtn" onclick="hard(100)">Hard 1 - 100</button>
 				</div>
 			</div>
-			<br>
-			<br>
-			<p><button onclick="game();" class="gamebutton">Start the Game</button></p>
+
+			<div class="buttonDiv"><a class="button" onclick="game();"><span>Start the Game</span></a></div>
 
 		</div>
-
 	</body>
 
-</html
+</html>
 

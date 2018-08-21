@@ -1,28 +1,34 @@
 *{	font-family: "Comic Sans MS", cursive, sans-serif;}
+
 body {
 	text-align: center;
-	background-color:#312F2F;
 }
 
 h1 {
-	margin-top: 48px;
-	margin-bottom: 48px;
-	color:white;
+	margin-top: 75px;
+	margin-bottom: 70px;
+	font-size: 400%;
+	color: white;
 }
 
 button {
-	height: 64px;
+	height: 82px;
 	width: 250px;
 	font-size: 24px;
 	color:white;
 	cursor:pointer;
 
 }
+strong{
+	font-size:20px;
+}
 
 .dropdown {
 	float: top;
 	position: relative;
 	display: inline-block;
+	margin-bottom:1%;
+
 }
 .dropbtn {
 	background-color: #A6D9F7;
@@ -32,9 +38,12 @@ button {
 	float: top;
 	position: relative;
 	display: inline-block;
+	outline: none;
+
 }
 
 .dropbtn:hover, .dropbtn:focus {
+
 	background-color: #67C2F7;
 }
 .dropdown-content {
@@ -67,6 +76,7 @@ button {
 
 
 .content{
+	padding-top: 50px;
 	height: 100%;
 	width: 100%;
 	left:0;
@@ -97,7 +107,7 @@ button {
 	50%{background-position:100% 19%}
 	100%{background-position:0% 82%}
 }
-@keyframes rainbow {
+@keyframes rainbow { 
 	0%{background-position:0% 82%}
 	50%{background-position:100% 19%}
 	100%{background-position:0% 82%}
@@ -106,164 +116,62 @@ button {
 
 
 
+/* Original Code From: https://codepen.io/anon/pen/zLmpww */
 
-.stretch, .gamebutton:after, .gamebutton:before {
-	bottom: 0;
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
+@keyframes gradient-move {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
-.gamebutton {
-	background: #84DCCF;
-	background-size: 100%;
-	-moz-border-radius: 1.5em;
-	-webkit-border-radius: 1.5em;
-	border-radius: 1.5em;
-	-moz-transition: opacity 300ms;
-	-o-transition: opacity 300ms;
-	-webkit-transition: opacity 300ms;
-	transition: opacity 300ms;
-	border: none;
-	color: white;
-	font-weight: bold;
-	letter-spacing: 0.05em;
+
+.buttonDiv {
 	outline: none;
 	overflow: hidden;
 	position: relative;
 	cursor: pointer;
+	top: 10%;
+	transform: translate3d(0%, 0%, 0);
 }
-.gamebutton:hover{
-  -webkit-animation: glitch 750ms infinite;
 
+.button {
+	border-radius: 50em;
+	padding: 1.5em 3.5em;
+	line-height: 1.6em;
+	overflow: hidden;
+	font-weight: 600;
+	letter-spacing: .02em;
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0.3);
+	color: rgba(0, 0, 0, 0.4);
+	font-size: 1.2em;
 }
-.gamebutton:after {
-	-moz-box-shadow: rgba(212, 207, 201, 0.75) 0 0 15px 2px;
-	-webkit-box-shadow: rgba(212, 207, 201, 0.75) 0 0 15px 2px;
-	box-shadow: rgba(212, 207, 201, 0.75) 0 0 15px 2px;
-	background: #FAF15D;
-	content: "";
-	height: 2px;
+.button:before {
+	transition: 1.5s cubic-bezier(0.34, 0.01, 0.35, 0.98);
+	overflow: hidden;
+	z-index: -1;
+	opacity: 0;
+	background: linear-gradient(270deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+	animation: gradient-move 18s ease infinite;
+	background-size: 2000% 2000%;
+	content: '';
+	border-radius: 50em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	opacity: 0;
 }
-.gamebutton:before {
-	content: "";
-	opacity: 0;
-}
 
-.gamebutton:hover:before {
+.button:before, .button:focus:before, .button:active:before {
 	opacity: 1;
+	transition: 0.3s cubic-bezier(0.34, 0.01, 0.35, 0.98);
 }
-.gamebutton:hover:after {
-	-webkit-animation: scan 2s infinite;
-	opacity: 1;
-}
-
-@-webkit-keyframes glitch {
-	0% {
-		-moz-transform: skewX(0deg);
-		-ms-transform: skewX(0deg);
-		-webkit-transform: skewX(0deg);
-		transform: skewX(0deg);
-	}
-	5% {
-		-moz-transform: skewX(2deg);
-		-ms-transform: skewX(2deg);
-		-webkit-transform: skewX(2deg);
-		transform: skewX(2deg);
-		opacity: 0.75;
-	}
-	10% {
-		-moz-transform: skewX(0deg);
-		-ms-transform: skewX(0deg);
-		-webkit-transform: skewX(0deg);
-		transform: skewX(0deg);
-		opacity: 1;
-	}
-	15% {
-		-moz-transform: skewX(-5deg);
-		-ms-transform: skewX(-5deg);
-		-webkit-transform: skewX(-5deg);
-		transform: skewX(-5deg);
-		opacity: 0.75;
-	}
-	20% {
-		-moz-transform: skewX(0deg);
-		-ms-transform: skewX(0deg);
-		-webkit-transform: skewX(0deg);
-		transform: skewX(0deg);
-		opacity: 1;
-	}
-	45% {
-		-moz-transform: skewX(3deg);
-		-ms-transform: skewX(3deg);
-		-webkit-transform: skewX(3deg);
-		transform: skewX(3deg);
-		opacity: 0.75;
-	}
-	50% {
-		-moz-transform: skewX(0deg);
-		-ms-transform: skewX(0deg);
-		-webkit-transform: skewX(0deg);
-		transform: skewX(0deg);
-		opacity: 1;
-	}
-	55% {
-		-moz-transform: skewX(0deg);
-		-ms-transform: skewX(0deg);
-		-webkit-transform: skewX(0deg);
-		transform: skewX(0deg);
-		opacity: 0.75;
-	}
-	60% {
-		-moz-transform: skewX(0deg);
-		-ms-transform: skewX(0deg);
-		-webkit-transform: skewX(0deg);
-		transform: skewX(0deg);
-		opacity: 1;
-	}
-	75% {
-		-moz-transform: skewX(2deg);
-		-ms-transform: skewX(2deg);
-		-webkit-transform: skewX(2deg);
-		transform: skewX(2deg);
-	}
-	80% {
-		-moz-transform: skewX(0deg);
-		-ms-transform: skewX(0deg);
-		-webkit-transform: skewX(0deg);
-		transform: skewX(0deg);
-	}
-	85% {
-		-moz-transform: skewX(-8deg);
-		-ms-transform: skewX(-8deg);
-		-webkit-transform: skewX(-8deg);
-		transform: skewX(-8deg);
-		opacity: 0.75;
-	}
-	90% {
-		-moz-transform: skewX(0deg);
-		-ms-transform: skewX(0deg);
-		-webkit-transform: skewX(0deg);
-		transform: skewX(0deg);
-		opacity: 1;
-	}
-	100% {
-		-moz-transform: skewX(0deg);
-		-ms-transform: skewX(0deg);
-		-webkit-transform: skewX(0deg);
-		transform: skewX(0deg);
-	}
-}
-@-webkit-keyframes scan {
-	0% {
-		top: 0%;
-	}
-	50% {
-		top: 97%;
-	}
-	100% {
-		top: 0%;
-	}
-}
-
