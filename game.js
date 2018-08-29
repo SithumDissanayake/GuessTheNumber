@@ -44,7 +44,7 @@ function game() {
 	var allUserGuesses = [];
 	var guessedBefore = false;
 	while (true) {
-		var userGuess = prompt("Enter Your Guess:");
+		var userGuess = prompt("Enter Your Guess (1-" + upperLimit + "):");
 		if (userGuess == null) {
 			break;
 		}
