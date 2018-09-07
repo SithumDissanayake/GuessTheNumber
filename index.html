@@ -9,7 +9,7 @@
 		<title>Guess the Number</title>
 
 		<link rel="stylesheet" href="style.css">
-		<script src="game.js"></script>
+
 
 	</head>
 
@@ -21,15 +21,16 @@
 			<div class="dropdown">
 				<button id="b1" onclick="dropdown()" class="dropbtn"><strong>Select Difficulty</strong><br/>Default Difficulty:<br/> Beginner 1 - 10</button>
 				<div id="dropdownList" class="dropdown-content">
-					<button class="dropdownbtn" onclick="beginner(10)">Beginner 1 - 10</button>
-					<button class="dropdownbtn" onclick="intermediate(50)">Intermediate 1 - 50</button>
-					<button class="dropdownbtn" onclick="hard(100)">Hard 1 - 100</button>
+					<button class="dropdownbtn1" onclick="difficulty(10, '#00ff00', '#00e600','Beginner 1 - 10')">Beginner 1 - 10</button>
+					<button class="dropdownbtn2" onclick="difficulty(50, '#ff9900', '#e68a00', 'Intermediate 1 - 50')">Intermediate 1 - 50</button>
+					<button class="dropdownbtn3" onclick="difficulty(100, '#ff0000', '#e60000', 'Hard 1 - 100')">Hard 1 - 100</button>
 				</div>
 			</div>
 
 			<div class="buttonDiv"><a class="button" onclick="game();"><span>Start the Game</span></a></div>
 
 		</div>
+		<script src="game.js"></script>
 	</body>
 
 </html>

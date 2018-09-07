@@ -5,7 +5,6 @@ body {
 }
 
 h1 {
-	margin-top: 4%;
 	margin-bottom: 70px;
 	font-size: 400%;
 	color: white;
@@ -27,12 +26,12 @@ strong{
 	position: relative;
 	display: inline-block;
 	margin-bottom:1%;
-		box-shadow: inset 0px 0px 0px 2px white;
+	box-shadow: inset 0px 0px 0px 2px white;
 
 
 }
 .dropbtn {
-	background-color: #808080;
+	background-color: #00ff00;
 	color: white;
 	font-size: 16px;
 	border: none;
@@ -40,14 +39,14 @@ strong{
 	position: relative;
 	display: inline-block;
 	outline: none;
-		box-shadow: inset 0px 0px 0px 2px white;
+	box-shadow: inset 0px 0px 0px 2px white;
 
 
 }
 
 .dropbtn:hover, .dropbtn:focus {
-	background-color: #666666;
-		box-shadow: inset 0px 0px 0px 2px white;
+	background-color: #00cc00;
+	box-shadow: inset 0px 0px 0px 2px white;
 
 }
 .dropdown-content {
@@ -64,15 +63,27 @@ strong{
 	color: black;
 	text-decoration: none;
 	display: block;
-		box-shadow: inset 0px 0px 0px 2px white;
+	box-shadow: inset 0px 0px 0px 2px white;
 
 }
 
-.dropdownbtn{
-	background-color:#4d4d4d;
+.dropdownbtn1{
+	background-color:#00ff00;
 }
-.dropdownbtn:hover, .dropdownbtn:focus {
-	background-color:  #1a1a1a;
+.dropdownbtn1:hover, .dropdownbtn1:focus {
+	background-color:#00e600;
+}
+.dropdownbtn2{
+	background-color:#ff9900;
+}
+.dropdownbtn2:hover, .dropdownbtn2:focus {
+	background-color:#e68a00;
+}
+.dropdownbtn3{
+	background-color:#ff0000;
+}
+.dropdownbtn3:hover, .dropdownbtn3:focus {
+	background-color:#e60000;
 }
 
 

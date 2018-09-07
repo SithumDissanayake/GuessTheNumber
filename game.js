@@ -6,10 +6,11 @@
 // (signed) **** Sithum Dissanayake ****
 // I have attempted all the extension tasks
 */
+//The dropdown button is clicked
 function dropdown() {
+	//Checks the HTML for the id dropdownList and toggles the classList to show
 	document.getElementById("dropdownList").classList.toggle("show");
 }
-
 window.onclick = function(event) {
 	if (!event.target.matches('.dropbtn')) {
 
@@ -23,68 +24,99 @@ window.onclick = function(event) {
 		}
 	}
 }
-
+//Sets the default value of the upperLimit to 10, or beginner.
 var upperLimit = 10;
+var mainbtn = document.getElementById("b1");
+//Changes difficulty depending on the button clicked
+function difficulty(choice, backgroundcolor, hovercolor, text) {
+	upperLimit = choice++;
+	mainbtn.innerHTML = "<strong>Select Difficulty</strong><br/>Difficulty Selected:<br/> " + text;
+	mainbtn.style.backgroundColor = backgroundcolor;
+	mainbtn:hover.style.backgroundColor = hovercolor;
+	mainbtn:focus.style.backgroundColor = hovercolor;
+}
 
-function beginner(choice) {
-	upperLimit = choice++;
-	document.getElementById("b1").innerHTML = "<strong>Select Difficulty</strong><br/>Difficulty Selected:<br/> Beginner 1 - 10";
-}
-function intermediate(choice) {
-	upperLimit = choice++;
-	document.getElementById("b1").innerHTML = "<strong>Select Difficulty</strong><br/>Difficulty Selected:<br/> Intermediate 1 - 50";
-}
-function hard(choice) {
-	upperLimit = choice++;
-	document.getElementById("b1").innerHTML = "<strong>Select Difficulty</strong><br/>Difficulty Selected:<br/> Hard 1 - 100";
-}
+//Starts the game when the button is clicked
 function game() {
-	var randomNumber = Math.floor((Math.random() * upperLimit) + 1);
+	//Creates a variable named randomNumber and sets it to a randomnumber
+	var randomNumber = Math.floor(Math.random() * upperLimit) + 1;
+	//Creates a variable named playerAttempts and sets it to 1
 	var playerAttempts = 1;
+	//Creates a variable named allUserGuesses and sets it to an empty array
 	var allUserGuesses = [];
+	//Creates a variable named guessedBefore and sets it to false
 	var guessedBefore = false;
+	//Starts a while loop that keeps looping as long as it is true
 	while (true) {
+		//Creates a variable named userGuess and sets it the number the user guesses 
 		var userGuess = prompt("Enter Your Guess (1-" + upperLimit + "):");
+		//If the userGuess equaled null
 		if (userGuess == null) {
+			//Stops the function
 			break;
 		}
+		//Checks if userGuess is finite and if userGuess does not equal nothing
 		if (isFinite(userGuess) && userGuess != "") {
 			userGuess = +userGuess;
+			//This loops through the array untill every number is checked
 			for (i = 0; i < allUserGuesses.length; i++) {
+				//Checks if the number in the array,allUserGuesses, equals userGuess  
 				if (allUserGuesses[i] == userGuess) {
+					//Alerts the user that they have guessed the number before
 					alert("You have guessed this number before. Please try a different number");
+					//Sets guessedBefore to true
 					guessedBefore = true;
 				}
 			}
+			//Checks if guessedBefore equals false
 			if (guessedBefore == false) {
+				//Checks if the userGuess is below 1
 				if (userGuess < 1) {
+					//Alerts the user that the number they chose should not be less than 1
 					alert("Your guess should be no less than 1");
-				} else if (userGuess > upperLimit) {
+				} 
+				//Checks if userGuess is more the upperLimit
+				else if (userGuess > upperLimit) {
+					//Alerts the user that the number they chose should not be more than the upperLimit
 					alert("Your guess should be no greater than " + upperLimit);
-				} else if (userGuess > randomNumber) {
+				} 
+				//Checks if userGuess is more than randomNumber
+				else if (userGuess > randomNumber) {
+					//Alerts user that their guess is too high
 					alert("Your guess is too high");
+					//Increases playerAttempts by 1
 					playerAttempts++;
+					//Pushes the userGuess to array allUserGuesses
 					allUserGuesses.push(userGuess);
-				} else if (userGuess < randomNumber) {
+				}
+				//Checks if userGuess is less than randomNumber
+				else if (userGuess < randomNumber) {
+					//Alerts user that their guess is too low
 					alert("Your guess is too low");
+					//Increases playerAttempts by 1
 					playerAttempts++;
+					//Pushes the userGuess to array allUserGuesses
 					allUserGuesses.push(userGuess);
 				} else {
+					//Checks if playerAttempts equals 1
 					if (playerAttempts == 1){
+						//Alerts user that they guessed the number in 1 guess
 						alert("Congratulations, you guessed the number in 1 guess!");
+						//Stops the function
 						break;
-					}
-					else{
+					} else {
+						//Alerts user that they guessed the number in playerAttempts
 						alert("Congratulations, you guessed the number in " + playerAttempts + " guesses!");
+						//Stops the function
 						break;
 					}
 				}
 			}
+			//Sets guessedBefore to false
 			guessedBefore = false;
 		} else {
+			//Alerts user to enter a number
 			alert("Please enter a number");
 		}
 	}
 }
-
-
