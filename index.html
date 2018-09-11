@@ -1,38 +1,23 @@
 <!doctype html>
-
 <html lang="en">
-
-	<head>
-
-		<meta charset="utf-8">
-
-		<title>Guess the Number</title>
-
-		<link rel="stylesheet" href="style.css">
-
-
-	</head>
-
-	<body>
-		<div class="content">
-
-			<h1>Guess the Number</h1>
-
-			<div class="dropdown">
-				<button id="b1" onclick="dropdown()" class="dropbtn"><strong>Select Difficulty</strong><br/>Default Difficulty:<br/> Beginner 1 - 10</button>
-				<div id="dropdownList" class="dropdown-content">
-					<button class="dropdownbtn1" onclick="difficulty(10, 0,	'Beginner 1 - 10')">Beginner 1 - 10</button>
-					<button class="dropdownbtn2" onclick="difficulty(50, 1,	'Intermediate 1 - 50')">Intermediate 1 - 50</button>
-					<button class="dropdownbtn3" onclick="difficulty(100, 2, 'Hard 1 - 100')">Hard 1 - 100</button>
-				</div>
-			</div>
-
-			<div class="buttonDiv"><a class="button" onclick="game();"><span>Start the Game</span></a></div>
-
-		</div>
-		<script src="game.js"></script>
-	</body>
-
+   <head>
+      <meta charset="utf-8">
+      <title>Guess the Number</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="content">
+         <h1>Guess the Number</h1>
+         <div class="dropdown">
+            <button id="b1" onclick="dropdown()" class="dropbtn"><strong>Select Difficulty</strong><br/>Default Difficulty:<br/> Beginner 1 - 10</button>
+            <div id="dropdownList" class="dropdown-content">
+               <button class="dropdownbtn1" onclick="difficulty(10, 0,	'Beginner 1 - 10')">Beginner 1 - 10</button>
+               <button class="dropdownbtn2" onclick="difficulty(50, 1,	'Intermediate 1 - 50')">Intermediate 1 - 50</button>
+               <button class="dropdownbtn3" onclick="difficulty(100, 2, 'Hard 1 - 100')">Hard 1 - 100</button>
+            </div>
+         </div>
+         <div class="buttonDiv"><a class="button" onclick="game();"><span>Start the Game</span></a></div>
+      </div>
+      <script src="game.js"></script>
+   </body>
 </html>
-
-
